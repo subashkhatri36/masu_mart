@@ -8,7 +8,7 @@ class User {
   final String mobile;
   final String email;
   final String password;
-  final String address;
+  final Address address;
   final bool login;
   final String userType;
   final String regDate;
@@ -118,5 +118,71 @@ class User {
   @override
   String toString() {
     return 'User(id: $id, fullname: $fullname, mobile: $mobile, email: $email, password: $password, address: $address, login: $login, userType: $userType, regDate: $regDate, log: $log, lat: $lat, phoneverified: $phoneverified, emailverified: $emailverified, paymentEnable: $paymentEnable)';
+  }
+}
+
+class Address {
+  final String place;
+  final String city;
+  final String state;
+  final String zipcode;
+  String country;
+  Address({
+    @required this.place,
+    @required this.city,
+    @required this.state,
+    @required this.zipcode,
+    this.country,
+  });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'place': place,
+      'city': city,
+      'state': state,
+      'zipcode': zipcode,
+      'country': country,
+    };
+  }
+
+  factory Address.fromMap(Map<String, dynamic> map) {
+    return Address(
+      place: map['place'],
+      city: map['city'],
+      state: map['state'],
+      zipcode: map['zipcode'],
+      country: map['country'],
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Address.fromJson(String source) =>
+      Address.fromMap(json.decode(source));
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Address &&
+        other.place == place &&
+        other.city == city &&
+        other.state == state &&
+        other.zipcode == zipcode &&
+        other.country == country;
+  }
+
+  @override
+  int get hashCode {
+    return place.hashCode ^
+        city.hashCode ^
+        state.hashCode ^
+        zipcode.hashCode ^
+        country.hashCode;
+  }
+
+  @override
+  String toString() {
+    return 'Address(place: $place, city: $city, state: $state, zipcode: $zipcode, country: $country)';
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:masu_mart/app/constants/theme_data.dart';
 
 class CustomTextFieldForm extends StatelessWidget {
   final TextEditingController controller;
@@ -33,13 +34,24 @@ class CustomTextFieldForm extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppTheme.primaryColor,
+                ),
+                borderRadius: BorderRadius.circular(round ? 20 : 0.0)),
             contentPadding: EdgeInsets.only(left: 10),
             hintText: hintText,
             labelStyle: TextStyle(color: hintcolor),
-            prefixIcon: Icon(prefixIcon),
+            prefixIcon: Icon(
+              prefixIcon,
+              color: AppTheme.primaryColor,
+            ),
             suffixIcon: suffixIcon ?? null,
             labelText: label,
             border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppTheme.primaryColor,
+                ),
                 borderRadius: BorderRadius.circular(round ? 20 : 0.0))));
   }
 }

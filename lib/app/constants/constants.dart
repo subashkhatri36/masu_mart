@@ -15,3 +15,4 @@ const double fontsmall = 8.0;
 const double fontmiddle = 14.0;
 const double fontsubheading = 16.0;
 const double fontheading = 18.0;
+const double borderoutlineRadius = 20.0;

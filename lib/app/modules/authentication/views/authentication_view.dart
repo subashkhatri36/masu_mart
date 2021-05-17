@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
+import 'package:masu_mart/app/constants/constants.dart';
+import 'package:masu_mart/app/constants/theme_data.dart';
 import 'package:masu_mart/app/modules/authentication/views/register_view.dart';
 import 'package:masu_mart/app/utils/size_config.dart';
 import 'package:masu_mart/app/utils/string_utils.dart';
 import 'package:masu_mart/app/utils/validators.dart';
+import 'package:masu_mart/app/widgets/common%20ui/app_big_logo.dart';
+import 'package:masu_mart/app/widgets/common%20ui/or_widget.dart';
 import 'package:masu_mart/app/widgets/custome_button.dart';
 import 'package:masu_mart/app/widgets/custome_input_field.dart';
 
@@ -15,7 +19,6 @@ class AuthenticationView extends GetView<AuthenticationController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //  backgroundColor: Theme.of(context).backgroundColor,
         body: Obx(
       () => controller.register.value
           ? RegisterView()
@@ -23,120 +26,90 @@ class AuthenticationView extends GetView<AuthenticationController> {
               child: Form(
                 key: controller.formkey,
                 child: Padding(
-                  padding: const EdgeInsets.all(verticalheight),
+                  padding: const EdgeInsets.all(paddingmiddle),
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        Container(
-                          height: verticalheight * 10,
-                          width: verticalheight * 10,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Image.asset(
-                            'assets/images/masulogo.png',
-                            width: verticalheight * 10,
-                            fit: BoxFit.fitWidth,
-                          ),
-                        ),
-                        SizedBox(height: verticalheight),
-                        Text(logIn),
-                        SizedBox(height: verticalheight),
+                        AppBigLogo(),
+
+                        SizedBox(height: 4 * SizeConfig.heightMultiplier),
                         CustomTextFieldForm(
                           controller: controller.emailController,
-                          hintText: email,
+                          hintText: email.tr,
                           round: true,
                           validator: (value) => validateEmail(string: value),
                           prefixIcon: Icons.email,
                         ),
-                        SizedBox(height: verticalheight),
+                        SizedBox(height: 2 * SizeConfig.heightMultiplier),
                         Obx(() => CustomTextFieldForm(
                               controller: controller.passwordController,
-                              hintText: password,
+                              hintText: password.tr,
                               round: true,
                               suffixIcon: controller.passwordshow.value
                                   ? IconButton(
                                       onPressed: () {
                                         controller.passwordshow.toggle();
                                       },
-                                      icon: Icon(Icons.view_agenda))
+                                      icon: Icon(
+                                        Icons.view_agenda,
+                                        color: AppTheme.primaryColor,
+                                      ))
                                   : IconButton(
                                       onPressed: () {
                                         controller.passwordshow.toggle();
                                       },
-                                      icon: Icon(FontAwesomeIcons.eye)),
+                                      icon: Icon(FontAwesomeIcons.eye,
+                                          color: AppTheme.primaryColor)),
                               validator: (value) =>
                                   validatePassword(string: value),
                               prefixIcon: Icons.lock,
                               obscureText: controller.passwordshow.value,
                             )),
-                        SizedBox(height: verticalheight),
+                        SizedBox(height: 2 * SizeConfig.heightMultiplier),
                         Align(
                           alignment: Alignment.centerRight,
                           child: InkWell(
-                            child: Text(forgetPassword),
+                            child: Text(
+                              forgetPassword.tr,
+                              style: Theme.of(context).textTheme.bodyText1,
+                            ),
                           ),
                         ),
-                        // SizedBox(height: verticalheight),
+                        // SizedBox(height: 10),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: verticalheight),
+                              vertical: paddingmiddle),
                           child: Row(
                             children: [
                               Expanded(
                                   child: CustomButton(
-                                label: logIn,
-                                btnColor: Theme.of(context).backgroundColor,
+                                label: logIn.tr,
                                 labelColor: Colors.white,
                                 onPressed: () {
                                   controller.signIn();
                                 },
-                                borderRadius: verticalheight,
+                                borderRadius: borderoutlineRadius,
                               )),
-                              SizedBox(width: verticalheight),
+                              SizedBox(width: 3 * SizeConfig.widthMultiplier),
                               Expanded(
                                   child: CustomButton(
-                                label: register,
+                                label: register.tr,
                                 onPressed: () {
                                   controller.register.toggle();
                                 },
-                                labelColor: Colors.white,
-                                btnColor: Theme.of(context).backgroundColor,
-                                borderRadius: verticalheight,
+                                borderRadius: borderoutlineRadius,
                               )),
                             ],
                           ),
                         ),
-                        Row(
-                          children: [
-                            Expanded(
-                                child: Divider(
-                              color: Theme.of(context)
-                                  .backgroundColor
-                                  .withOpacity(0.5),
-                            )),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: verticalheight),
-                              child: Text('OR'),
-                            ),
-                            Expanded(
-                                child: Divider(
-                              color: Theme.of(context)
-                                  .backgroundColor
-                                  .withOpacity(0.5),
-                            )),
-                          ],
-                        ),
-                        SizedBox(height: verticalheight),
+                        OptionOrWidget(),
+                        SizedBox(height: 10),
                         CustomButton(
-                          label: googleSingIn,
+                          label: googleSingIn.tr,
                           onPressed: () {
                             controller.googleSingIn();
                           },
-                          labelColor: Colors.white,
-                          btnColor: Theme.of(context).backgroundColor,
-                          borderRadius: verticalheight,
+                          borderRadius: borderoutlineRadius,
                         )
                       ],
                     ),

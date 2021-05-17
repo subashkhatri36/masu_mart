@@ -9,3 +9,16 @@ const String googleSingIn = 'Google SignIn';
 const String email = 'Email Address';
 const String password = 'Password';
 const String rpassword = 'Re-Password';
+const String or = 'OR';
+const String logOut = 'Log Out';
+const String todayPrice = 'Today\'s Price';
+const String rs = 'Rs.';
+const String search = 'Search';
+//product
+const String total = 'Total';
+const String qty = 'Qty';
+const String bonless = 'Boneless';
+const String noskin = 'No Skin';
+const String addtocart = 'Add to Cart';
+const String removefromcart = 'Remove from Cart';
+const String preOrder = 'Take Pre Order';

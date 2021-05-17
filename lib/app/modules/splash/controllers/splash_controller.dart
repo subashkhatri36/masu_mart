@@ -1,18 +1,34 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:masu_mart/app/core/services/storage/offline_data.dart';
 import 'package:masu_mart/app/modules/authentication/bindings/authentication_binding.dart';
 import 'package:masu_mart/app/modules/authentication/views/authentication_view.dart';
-import 'package:masu_mart/app/modules/home/bindings/home_binding.dart';
-import 'package:masu_mart/app/modules/home/views/home_view.dart';
 
 class SplashController extends GetxController {
+  RxBool nepaliLanguage = true.obs;
   Offline offline = new Offline();
+
   @override
   void onInit() {
-    //loadPage();
+    // loadPage();
+
     super.onInit();
+  }
+
+  void loadLanguage() {
+    print(nepaliLanguage.value);
+    if (nepaliLanguage.value)
+      changeLanugage('ne', 'NP');
+    else
+      changeLanugage('en', 'US');
+  }
+
+  void changeLanugage(String par1, String par2) {
+    print('it enter here ' + par1);
+    var local = Locale(par1, par2);
+    Get.updateLocale(local);
   }
 
   loadPage() {
@@ -38,5 +54,7 @@ class SplashController extends GetxController {
   }
 
   @override
-  void onClose() {}
+  void onClose() {
+    loadLanguage();
+  }
 }
