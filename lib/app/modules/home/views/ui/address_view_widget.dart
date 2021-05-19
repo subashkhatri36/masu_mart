@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:masu_mart/app/constants/theme_data.dart';
+import 'package:get/get.dart';
+import 'package:masu_mart/app/utils/string_utils.dart';
 
 class AddressViewWidget extends StatelessWidget {
   const AddressViewWidget({
@@ -28,7 +30,7 @@ class AddressViewWidget extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'User Address',
+                          userAddress.tr,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         SizedBox(

@@ -7,7 +7,6 @@ import 'package:masu_mart/app/modules/splash/controllers/splash_controller.dart'
 import 'package:get/get.dart';
 import 'package:masu_mart/app/utils/size_config.dart';
 import 'package:masu_mart/app/utils/string_utils.dart';
-import 'package:masu_mart/app/utils/ui_helpers.dart';
 import 'package:masu_mart/app/widgets/common%20ui/switch_ui.dart';
 
 class ProductItems extends StatelessWidget {
@@ -15,7 +14,9 @@ class ProductItems extends StatelessWidget {
   const ProductItems({
     Key key,
     this.index,
+    this.isshopping = false,
   }) : super(key: key);
+  final bool isshopping;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class ProductItems extends StatelessWidget {
             decoration:
                 BoxDecoration(border: Border.all(color: AppTheme.primaryColor)),
             width: 27 * SizeConfig.widthMultiplier,
-            height: 15 * SizeConfig.heightMultiplier,
+            height: 14 * SizeConfig.heightMultiplier,
             child: controller.productList[index].networkimage
                 ? Image.network(controller.productList[index].productUrl)
                 : Image.asset(
@@ -77,7 +78,7 @@ class ProductItems extends StatelessWidget {
                                 : controller.productList[index].nepali,
                             style: TextStyle(fontWeight: FontWeight.bold),
                           )),
-                      SizedBox(height: 1.4 * SizeConfig.heightMultiplier),
+                      SizedBox(height: 1 * SizeConfig.heightMultiplier),
                       //product qty
                       ProductQty(
                         index: index,
@@ -157,7 +158,7 @@ class ProductItems extends StatelessWidget {
                       //   ),
                       // ),
                       SizedBox(
-                        height: 3.5 * SizeConfig.heightMultiplier,
+                        height: 2.5 * SizeConfig.heightMultiplier,
                       ),
 
                       Text(
@@ -181,7 +182,13 @@ class ProductItems extends StatelessWidget {
                               backgroundColor: Colors.grey,
                             ),
                             onPressed: () {},
-                            child: Text(addtocart.tr)),
+                            child: Text(
+                              isshopping ? addtocart.tr : removefromcart.tr,
+                              style: TextStyle(
+                                  fontSize: isshopping
+                                      ? fontmiddle - 2
+                                      : fontmiddle - 5),
+                            )),
                       )
                     ],
                   ),

@@ -27,10 +27,10 @@ class CustomButton extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .bodyText1
-              .copyWith(color: Colors.white),
+              .copyWith(color: labelColor ?? Colors.white),
         ),
         style: TextButton.styleFrom(
-            // primary: labelColor,
+            // primary: labelColor ?? null,
             backgroundColor: btnColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius),

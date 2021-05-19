@@ -26,6 +26,15 @@ class TLanguage extends Translations {
           addtocart: addtocart,
           removefromcart: removefromcart,
           preOrder: preOrder,
+          dashboard: dashboard,
+          totalReferal: totalReferal,
+          totalOrder: totalOrder,
+          use: use,
+          gift: gift,
+          yourrefcode: yourrefcode,
+          userAddress: userAddress,
+          spyamentMethod: spyamentMethod,
+          languageSetting: languageSetting,
         },
         'ne_NP': {
           appName: 'मासु',
@@ -49,6 +58,15 @@ class TLanguage extends Translations {
           addtocart: 'किन्न छुट्याउनुस्',
           removefromcart: 'कार्टबाट हटाउनुहोस्',
           preOrder: 'पहिलो अर्डर लिनुहोस्',
+          dashboard: 'ड्यासबोर्ड',
+          totalReferal: 'जम्मा रेफरल',
+          totalOrder: 'जम्मा अर्डर',
+          use: 'प्रयोग गर्नुहोस्',
+          gift: 'उपहार',
+          yourrefcode: 'तपाइँको रेफरल कोड',
+          userAddress: 'प्रयोगकर्ताको ठेगाना',
+          spyamentMethod: 'भुक्तानी विधि',
+          languageSetting: 'भाषा सेटिंग'
         }
       };
 }

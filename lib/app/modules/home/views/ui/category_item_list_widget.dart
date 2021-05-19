@@ -51,11 +51,11 @@ class CategoryItemSuffel extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            cat.image
+            cat.networkimage
                 ? Image.network(
                     'https://static.xx.fbcdn.net/images/emoji.php/v9/ta5/1/32/1f410.png')
                 : Text(
-                    cat.icon,
+                    cat.image,
                     // style: Theme.of(context).textTheme.headline2,
                   ),
             Obx(() => Text(

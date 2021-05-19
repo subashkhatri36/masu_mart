@@ -22,3 +22,13 @@ const String noskin = 'No Skin';
 const String addtocart = 'Add to Cart';
 const String removefromcart = 'Remove from Cart';
 const String preOrder = 'Take Pre Order';
+//from account
+const String dashboard = 'DashBoard';
+const String totalReferal = 'Total Referal';
+const String totalOrder = 'Total Order';
+const String use = 'Use';
+const String gift = 'Gift';
+const String yourrefcode = 'Your Referal Code';
+const String userAddress = 'User Address';
+const String spyamentMethod = 'Payment Method';
+const String languageSetting = 'Language Setting';

@@ -1,6 +1,81 @@
 import 'package:masu_mart/app/data/model/category_model.dart';
 import 'package:masu_mart/app/data/model/product_model.dart';
 
+List<Product> productskhasi = [
+  new Product(
+      index: 0,
+      nepali: 'खसी',
+      productName: 'Goat',
+      productPrice: 1000.0,
+      totalprice: 1000.0,
+      categoryId: '2',
+      productDetail: 'Fresh Goat meat',
+      productUrl:
+          'https://1.bp.blogspot.com/-ppTRoQsnUb4/YKEMjI3BbHI/AAAAAAAAAX8/cuqph4DTcwcc4JKlADmgdBjDcVX-6CFSQCLcBGAsYHQ/s320/khashi.png',
+      networkimage: true,
+      bonelessPrice: 0,
+      noskinPrice: 0,
+      boneless: false,
+      skinless: false,
+      qtyType: 'kg',
+      active: true,
+      pricerisefall: 'rise'),
+  new Product(
+      index: 1,
+      nepali: 'खसीको मासु',
+      productName: 'Khasi ko Masu',
+      productPrice: 1000.0,
+      totalprice: 1000.0,
+      categoryId: '1',
+      productDetail: 'Fresh Goat meat',
+      productUrl:
+          'https://cdn.shinjukuhalalfood.com/wp-content/uploads/2020/12/13031733/frozen-goat-meat-1569583834-5097271.jpeg',
+      networkimage: true,
+      bonelessPrice: 20,
+      noskinPrice: 10,
+      boneless: false,
+      skinless: false,
+      qtyType: 'kg',
+      active: true,
+      pricerisefall: 'rise'),
+  new Product(
+    index: 2,
+    nepali: 'खसीको खुट्टा',
+    productName: 'Khasiko khutta',
+    productPrice: 420.0,
+    totalprice: 420.0,
+    categoryId: '2',
+    productDetail: 'Fresh goat leg',
+    productUrl:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Ws946IKHyDPJbJmZL17Oi130fssvVbieTGClZQxicX0BCvQDLN72Jwb2BTK9TT6B0Ms&usqp=CAU',
+    networkimage: true,
+    bonelessPrice: 20,
+    noskinPrice: 10,
+    boneless: false,
+    skinless: false,
+    qtyType: 'kg',
+    active: true,
+  ),
+  new Product(
+    index: 3,
+    nepali: 'खसीको छाती',
+    productName: 'Khasiko chati',
+    productPrice: 450.0,
+    totalprice: 450.0,
+    categoryId: '1',
+    productDetail: 'Fresh Khasi breast',
+    productUrl:
+        'https://st3.depositphotos.com/1062793/15849/i/1600/depositphotos_158493380-stock-photo-fresh-raw-young-goat-meat.jpg',
+    networkimage: true,
+    bonelessPrice: 20,
+    noskinPrice: 10,
+    boneless: false,
+    skinless: false,
+    qtyType: 'kg',
+    active: true,
+  ),
+];
+
 List<Product> productschicken = [
   new Product(
       index: 0,
@@ -116,69 +191,69 @@ List<Category> categorys = [
   //,🦢🦂🦐🦞🦀🦗🐙🐠🐟🚛
   new Category(
       id: '1',
-      icon: '🐔',
+      image: '🐔',
       name: 'Chicken',
       active: true,
       isSelected: true,
       nepali: 'कुखुरा',
-      image: false),
+      networkimage: false),
   new Category(
       id: '7',
-      icon: '🐐 ',
+      image: '🐐 ',
       name: 'Khasi',
       active: true,
       nepali: 'खसी',
-      image: false),
+      networkimage: false),
   new Category(
       id: '2',
-      icon: '🐓',
+      image: '🐓',
       name: 'Bhale',
       active: true,
       nepali: 'भाले',
-      image: false),
+      networkimage: false),
   new Category(
       id: '3',
-      icon: '🦃',
+      image: '🦃',
       name: 'Turkey',
       active: true,
       nepali: 'टर्की',
-      image: false),
+      networkimage: false),
   new Category(
       id: '4',
-      icon: '🦆',
+      image: '🦆',
       name: 'Duck',
       active: true,
       nepali: 'हाँस',
-      image: false),
+      networkimage: false),
   new Category(
       id: '5',
-      icon: '🦈',
+      image: '🦈',
       name: 'Fish',
       active: true,
       nepali: 'माछा',
-      image: false),
+      networkimage: false),
   new Category(
       id: '6',
-      icon: '🐃',
+      image: '🐃',
       name: 'Ranga',
       active: true,
       nepali: 'राँगा',
-      image: false), //
+      networkimage: false), //
 
   new Category(
       id: '8',
-      icon: '🐏',
+      image: '🐏',
       name: 'Sheep',
       active: true,
       nepali: 'भेडा',
-      image: false),
+      networkimage: false),
   new Category(
       id: '9',
-      icon: '🐰',
+      image: '🐰',
       name: 'Rabbit',
       active: true,
       nepali: 'खरायो',
-      image: false),
+      networkimage: false),
   //QuailAha,,,🐰🐃🦬
 
   //

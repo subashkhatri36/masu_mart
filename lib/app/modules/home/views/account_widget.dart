@@ -3,7 +3,9 @@ import 'package:masu_mart/app/constants/theme_data.dart';
 import 'package:masu_mart/app/modules/home/views/ui/account_header.dart';
 import 'package:masu_mart/app/modules/home/views/ui/address_view_widget.dart';
 import 'package:masu_mart/app/modules/home/views/ui/payment_method_widget.dart';
+import 'package:masu_mart/app/utils/string_utils.dart';
 import 'package:masu_mart/app/widgets/custome_button.dart';
+import 'package:get/get.dart';
 
 class AccountWidget extends StatelessWidget {
   @override
@@ -70,7 +72,7 @@ class ReferalDashboardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'DashBoard',
+              dashboard.tr,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             expanded,
@@ -98,7 +100,7 @@ class TotalOrderInfo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Total Order',
+                  totalOrder.tr,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 InkWell(
@@ -127,7 +129,7 @@ class TotalOrderInfo extends StatelessWidget {
             ),
             Spacer(),
             CustomButton(
-              label: 'Gift',
+              label: gift.tr,
               labelColor: Colors.white,
               btnColor: Colors.blueAccent,
               onPressed: () {},
@@ -157,7 +159,7 @@ class ReferalInfoCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Total Referal',
+                  totalReferal.tr,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 InkWell(
@@ -184,7 +186,7 @@ class ReferalInfoCard extends StatelessWidget {
             ),
             Spacer(),
             CustomButton(
-              label: 'Use',
+              label: use.tr,
               labelColor: Colors.white,
               btnColor: Colors.blueAccent,
               onPressed: () {},
@@ -211,7 +213,7 @@ class ReferalInfoWidget extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text('Your Referal Code',
+                Text(yourrefcode.tr,
                     style: TextStyle(fontWeight: FontWeight.bold)),
                 Spacer(),
                 Icon(

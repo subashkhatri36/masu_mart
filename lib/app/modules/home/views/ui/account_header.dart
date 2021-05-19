@@ -2,7 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:masu_mart/app/constants/constants.dart';
 import 'package:masu_mart/app/constants/theme_data.dart';
+import 'package:masu_mart/app/modules/setting/bindings/setting_binding.dart';
+import 'package:masu_mart/app/modules/setting/views/setting_view.dart';
+import 'package:get/get.dart';
 
 class AccountHeader extends StatelessWidget {
   const AccountHeader({
@@ -110,7 +114,24 @@ class AccountHeader extends StatelessWidget {
               child: Icon(
                 FontAwesomeIcons.powerOff,
                 color: Colors.white,
-                size: 15,
+                size: 14,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 5,
+            bottom: 0,
+            child: InkWell(
+              onTap: () {
+                Get.to(() => SettingView(), binding: SettingBinding());
+              },
+              child: CircleAvatar(
+                backgroundColor: AppTheme.primaryColor,
+                child: Icon(
+                  Icons.settings,
+                  color: Colors.white,
+                  size: paddinglarge,
+                ),
               ),
             ),
           ),
